@@ -150,13 +150,6 @@ namespace ImageEdgeDetection
             ApplyFilter(true);
         }
 
-        private void EdgeForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-            int test = 0;
-
-        }
-
         private void btnReturnToFilterForm_Click(object sender, EventArgs e)
         { 
             this.Close();
