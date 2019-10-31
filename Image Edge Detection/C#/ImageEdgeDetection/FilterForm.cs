@@ -33,10 +33,13 @@ namespace ImageEdgeDetection
 
         private void btnLoadImg_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select an image file.";
-            ofd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
-            ofd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
+            ofd.Filter =    "Png Images(*.png)|*.png|" +
+                            "Jpeg Images(*.jpg)|*.jpg|" +
+                            "Jpeg Images(*.jpeg)|*.jpeg|" +
+                            "Bitmap Images(*.bmp)|*.bmp";
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -50,7 +53,8 @@ namespace ImageEdgeDetection
                 ApplyFilter();
             }
 
-            enableCheckboxes();
+            if(previewBitmap != null)
+                enableCheckboxes();
         }
 
         private void ApplyFilter()
