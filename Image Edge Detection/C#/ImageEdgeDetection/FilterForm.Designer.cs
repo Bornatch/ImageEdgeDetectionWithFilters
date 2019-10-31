@@ -68,6 +68,7 @@
             this.Controls.Add(this.btnLoadImg);
             this.Controls.Add(this.btnOpenEdgeForm);
             this.Name = "FilterForm";
+            this.Text = "Filter application";
             this.Controls.SetChildIndex(this.picPreview, 0);
             this.Controls.SetChildIndex(this.btnOpenEdgeForm, 0);
             this.Controls.SetChildIndex(this.btnLoadImg, 0);
