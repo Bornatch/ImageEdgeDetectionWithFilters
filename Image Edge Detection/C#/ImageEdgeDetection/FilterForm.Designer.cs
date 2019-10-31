@@ -18,6 +18,7 @@
             // btnOpenEdgeForm
             // 
             this.btnOpenEdgeForm.Enabled = false;
+            this.btnOpenEdgeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenEdgeForm.Location = new System.Drawing.Point(500, 618);
             this.btnOpenEdgeForm.Name = "btnOpenEdgeForm";
             this.btnOpenEdgeForm.Size = new System.Drawing.Size(112, 53);
@@ -28,6 +29,7 @@
             // 
             // btnLoadImg
             // 
+            this.btnLoadImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadImg.Location = new System.Drawing.Point(12, 618);
             this.btnLoadImg.Name = "btnLoadImg";
             this.btnLoadImg.Size = new System.Drawing.Size(112, 53);
@@ -40,9 +42,10 @@
             // 
             this.ckbZenFilter.AutoSize = true;
             this.ckbZenFilter.Enabled = false;
+            this.ckbZenFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbZenFilter.Location = new System.Drawing.Point(141, 631);
             this.ckbZenFilter.Name = "ckbZenFilter";
-            this.ckbZenFilter.Size = new System.Drawing.Size(128, 29);
+            this.ckbZenFilter.Size = new System.Drawing.Size(90, 24);
             this.ckbZenFilter.TabIndex = 16;
             this.ckbZenFilter.Text = "Zen filter";
             this.ckbZenFilter.UseVisualStyleBackColor = true;
@@ -52,9 +55,10 @@
             // 
             this.ckbRainbowFilter.AutoSize = true;
             this.ckbRainbowFilter.Enabled = false;
+            this.ckbRainbowFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbRainbowFilter.Location = new System.Drawing.Point(317, 631);
             this.ckbRainbowFilter.Name = "ckbRainbowFilter";
-            this.ckbRainbowFilter.Size = new System.Drawing.Size(174, 29);
+            this.ckbRainbowFilter.Size = new System.Drawing.Size(124, 24);
             this.ckbRainbowFilter.TabIndex = 17;
             this.ckbRainbowFilter.Text = "Rainbow filter";
             this.ckbRainbowFilter.UseVisualStyleBackColor = true;

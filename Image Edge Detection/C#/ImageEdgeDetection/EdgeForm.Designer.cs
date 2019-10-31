@@ -18,6 +18,7 @@
             // 
             // btnSaveNewImage
             // 
+            this.btnSaveNewImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveNewImage.Location = new System.Drawing.Point(487, 618);
             this.btnSaveNewImage.Name = "btnSaveNewImage";
             this.btnSaveNewImage.Size = new System.Drawing.Size(125, 45);
@@ -28,6 +29,7 @@
             // 
             // cmbEdgeDetection
             // 
+            this.cmbEdgeDetection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEdgeDetection.FormattingEnabled = true;
             this.cmbEdgeDetection.Items.AddRange(new object[] {
             "None",
@@ -50,12 +52,13 @@
             "Kirsch Grayscale"});
             this.cmbEdgeDetection.Location = new System.Drawing.Point(158, 625);
             this.cmbEdgeDetection.Name = "cmbEdgeDetection";
-            this.cmbEdgeDetection.Size = new System.Drawing.Size(314, 33);
+            this.cmbEdgeDetection.Size = new System.Drawing.Size(314, 28);
             this.cmbEdgeDetection.TabIndex = 15;
             this.cmbEdgeDetection.SelectedIndexChanged += new System.EventHandler(this.cmbEdgeDetection_SelectedIndexChanged);
             // 
             // btnReturnToFilterForm
             // 
+            this.btnReturnToFilterForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturnToFilterForm.Location = new System.Drawing.Point(12, 618);
             this.btnReturnToFilterForm.Name = "btnReturnToFilterForm";
             this.btnReturnToFilterForm.Size = new System.Drawing.Size(125, 45);
