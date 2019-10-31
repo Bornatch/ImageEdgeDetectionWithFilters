@@ -31,6 +31,8 @@ namespace ImageEdgeDetection
 
         private void btnOpenOriginal_Click(object sender, EventArgs e)
         {
+
+            // Test pull
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select an image file.";
             ofd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
