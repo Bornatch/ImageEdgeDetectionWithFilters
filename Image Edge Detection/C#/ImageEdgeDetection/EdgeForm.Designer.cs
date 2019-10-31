@@ -71,12 +71,13 @@
             this.cmbEdgeDetection.TabIndex = 15;
             this.cmbEdgeDetection.SelectedIndexChanged += new System.EventHandler(this.cmbEdgeDetection_SelectedIndexChanged);
             // 
-            // EdgeFormTemp
+            // EdgeForm
             // 
             this.ClientSize = new System.Drawing.Size(624, 675);
             this.Controls.Add(this.cmbEdgeDetection);
             this.Controls.Add(this.btnSaveNewImage);
-            this.Name = "EdgeFormTemp";
+            this.Name = "EdgeForm";
+            this.Load += new System.EventHandler(this.EdgeForm_Load);
             this.Controls.SetChildIndex(this.picPreview, 0);
             this.Controls.SetChildIndex(this.btnSaveNewImage, 0);
             this.Controls.SetChildIndex(this.cmbEdgeDetection, 0);

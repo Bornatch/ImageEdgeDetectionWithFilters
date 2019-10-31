@@ -15,7 +15,7 @@ namespace ImageEdgeDetection
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EdgeForm());
+            Application.Run(new FilterForm());
         }
     }
 }

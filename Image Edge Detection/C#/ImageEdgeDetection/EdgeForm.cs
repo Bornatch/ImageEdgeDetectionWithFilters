@@ -17,16 +17,14 @@ namespace ImageEdgeDetection
         private Bitmap resultBitmap = null;
         private String appliedFilter = "";
 
-        public EdgeForm()
+        public EdgeForm(Bitmap importedImage)
         {
             InitializeComponent();
-            originalBitmap = new Bitmap(@"C:\Users\Nicolas Solioz\Pictures\Cheese Disco 22.07.2017\tree.jpg");
+            originalBitmap = importedImage;
             picPreview.Image = originalBitmap;
 
             cmbEdgeDetection.SelectedIndex = 0;
         }
-
-
 
         private void ApplyFilter(bool preview)
         {
@@ -152,6 +150,11 @@ namespace ImageEdgeDetection
         private void cmbEdgeDetection_SelectedIndexChanged(object sender, EventArgs e)
         {
             ApplyFilter(true);
+        }
+
+        private void EdgeForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
