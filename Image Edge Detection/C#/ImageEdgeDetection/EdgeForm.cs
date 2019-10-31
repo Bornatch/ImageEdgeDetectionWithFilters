@@ -109,7 +109,6 @@ namespace ImageEdgeDetection
         private void btnSaveNewImage_Click(object sender, EventArgs e)
         {
             //open dialog in order to save the modified image
-
             if (previewBitmap != null)
             {
                 SaveFileDialog sfd = new SaveFileDialog();
