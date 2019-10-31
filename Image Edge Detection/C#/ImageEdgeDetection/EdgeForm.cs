@@ -156,5 +156,11 @@ namespace ImageEdgeDetection
         {
 
         }
+
+        private void btnReturnToFilterForm_Click(object sender, EventArgs e)
+        { 
+            this.Close();
+            Application.OpenForms[0].Show();
+        }
     }
 }
