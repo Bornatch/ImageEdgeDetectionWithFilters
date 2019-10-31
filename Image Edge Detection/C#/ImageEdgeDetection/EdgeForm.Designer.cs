@@ -3,14 +3,14 @@
     partial class EdgeForm
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable nécessaire au concepteur.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Nettoyage des ressources utilisées.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,49 +20,31 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Code généré par le Concepteur Windows Form
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
+        /// le contenu de cette méthode avec l'éditeur de code.
         /// </summary>
         private void InitializeComponent()
         {
-            this.picPreview = new System.Windows.Forms.PictureBox();
             this.btnSaveNewImage = new System.Windows.Forms.Button();
             this.cmbEdgeDetection = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
             // 
-            // picPreview
-            // 
-            this.picPreview.BackColor = System.Drawing.Color.Silver;
-            this.picPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPreview.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.picPreview.Location = new System.Drawing.Point(12, 12);
-            this.picPreview.Name = "picPreview";
-            this.picPreview.Size = new System.Drawing.Size(600, 600);
-            this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPreview.TabIndex = 13;
-            this.picPreview.TabStop = false;
-            this.picPreview.Click += new System.EventHandler(this.picPreview_Click);
-            // 
             // btnSaveNewImage
             // 
-            this.btnSaveNewImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveNewImage.Location = new System.Drawing.Point(462, 618);
+            this.btnSaveNewImage.Location = new System.Drawing.Point(487, 618);
             this.btnSaveNewImage.Name = "btnSaveNewImage";
-            this.btnSaveNewImage.Size = new System.Drawing.Size(150, 52);
-            this.btnSaveNewImage.TabIndex = 16;
-            this.btnSaveNewImage.Text = "Save Image";
+            this.btnSaveNewImage.Size = new System.Drawing.Size(125, 45);
+            this.btnSaveNewImage.TabIndex = 14;
+            this.btnSaveNewImage.Text = "Save";
             this.btnSaveNewImage.UseVisualStyleBackColor = true;
             this.btnSaveNewImage.Click += new System.EventHandler(this.btnSaveNewImage_Click);
             // 
             // cmbEdgeDetection
             // 
-            this.cmbEdgeDetection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEdgeDetection.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEdgeDetection.FormattingEnabled = true;
             this.cmbEdgeDetection.Items.AddRange(new object[] {
             "None",
@@ -83,26 +65,21 @@
             "Prewitt Grayscale",
             "Kirsch",
             "Kirsch Grayscale"});
-            this.cmbEdgeDetection.Location = new System.Drawing.Point(12, 618);
+            this.cmbEdgeDetection.Location = new System.Drawing.Point(12, 625);
             this.cmbEdgeDetection.Name = "cmbEdgeDetection";
-            this.cmbEdgeDetection.Size = new System.Drawing.Size(444, 52);
-            this.cmbEdgeDetection.TabIndex = 20;
-            this.cmbEdgeDetection.SelectedIndexChanged += new System.EventHandler(this.NeighbourCountValueChangedEventHandler);
+            this.cmbEdgeDetection.Size = new System.Drawing.Size(469, 33);
+            this.cmbEdgeDetection.TabIndex = 15;
+            this.cmbEdgeDetection.SelectedIndexChanged += new System.EventHandler(this.cmbEdgeDetection_SelectedIndexChanged);
             // 
-            // MainForm
+            // EdgeFormTemp
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(624, 675);
             this.Controls.Add(this.cmbEdgeDetection);
             this.Controls.Add(this.btnSaveNewImage);
-            this.Controls.Add(this.picPreview);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main Form";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Name = "EdgeFormTemp";
+            this.Controls.SetChildIndex(this.picPreview, 0);
+            this.Controls.SetChildIndex(this.btnSaveNewImage, 0);
+            this.Controls.SetChildIndex(this.cmbEdgeDetection, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
 
@@ -110,9 +87,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picPreview;
         private System.Windows.Forms.Button btnSaveNewImage;
         private System.Windows.Forms.ComboBox cmbEdgeDetection;
     }
 }
-
