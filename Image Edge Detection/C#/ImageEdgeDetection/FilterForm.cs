@@ -13,13 +13,21 @@ namespace ImageEdgeDetection
     {
         private Bitmap originalBitmap = null;
         private Bitmap previewBitmap = null;
-        private Bitmap resultBitmap = null;
 
         private Boolean zenChecked = false;
         private Boolean rainbowChecked = false;
 
         public FilterForm()
         {
+            InitializeComponent();
+        }
+
+        public FilterForm(Bitmap importedImage)
+        {
+            picPreview.Image = importedImage;
+            previewBitmap = importedImage;
+            enableCheckboxes();
+
             InitializeComponent();
         }
 
@@ -83,13 +91,9 @@ namespace ImageEdgeDetection
 
         private void btnOpenEdgeForm_Click(object sender, EventArgs e)
         {
-            // CODE TAKEN FROM STACK OVERFLOW ***
-            // URL : https://stackoverflow.com/questions/5548746/c-sharp-open-a-new-form-then-close-the-current-form
             this.Hide();
             var edgeForm = new EdgeForm(previewBitmap);
-            edgeForm.Closed += (s, args) => this.Close();
-            edgeForm.Show();
-            // END OF CODE SNIPPET           
+            edgeForm.Show();       
         }
     }
 }

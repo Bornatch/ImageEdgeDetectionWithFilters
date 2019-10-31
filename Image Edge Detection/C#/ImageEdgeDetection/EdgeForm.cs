@@ -14,7 +14,6 @@ namespace ImageEdgeDetection
     {
         private Bitmap originalBitmap = null;
         private Bitmap previewBitmap = null;
-        private Bitmap resultBitmap = null;
         private String appliedFilter = "";
 
         public EdgeForm(Bitmap importedImage)
@@ -115,8 +114,7 @@ namespace ImageEdgeDetection
         {
             //open dialog in order to save the modified image
 
-            resultBitmap = previewBitmap;
-            if (resultBitmap != null)
+            if (previewBitmap != null)
             {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Title = "Specify a file name and file path";
@@ -138,11 +136,11 @@ namespace ImageEdgeDetection
                     }
 
                     StreamWriter streamWriter = new StreamWriter(sfd.FileName, false);
-                    resultBitmap.Save(streamWriter.BaseStream, imgFormat);
+                    previewBitmap.Save(streamWriter.BaseStream, imgFormat);
                     streamWriter.Flush();
                     streamWriter.Close();
 
-                    resultBitmap = null;
+                    previewBitmap = null;
                 }
             }
         }
@@ -155,6 +153,12 @@ namespace ImageEdgeDetection
         private void EdgeForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReturnToFilterForm_Click(object sender, EventArgs e)
+        { 
+            this.Close();
+            Application.OpenForms[0].Show();
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.btnSaveNewImage = new System.Windows.Forms.Button();
             this.cmbEdgeDetection = new System.Windows.Forms.ComboBox();
+            this.btnReturnToFilterForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,15 +66,26 @@
             "Prewitt Grayscale",
             "Kirsch",
             "Kirsch Grayscale"});
-            this.cmbEdgeDetection.Location = new System.Drawing.Point(12, 625);
+            this.cmbEdgeDetection.Location = new System.Drawing.Point(158, 625);
             this.cmbEdgeDetection.Name = "cmbEdgeDetection";
-            this.cmbEdgeDetection.Size = new System.Drawing.Size(469, 33);
+            this.cmbEdgeDetection.Size = new System.Drawing.Size(314, 33);
             this.cmbEdgeDetection.TabIndex = 15;
             this.cmbEdgeDetection.SelectedIndexChanged += new System.EventHandler(this.cmbEdgeDetection_SelectedIndexChanged);
+            // 
+            // btnReturnToFilterForm
+            // 
+            this.btnReturnToFilterForm.Location = new System.Drawing.Point(12, 618);
+            this.btnReturnToFilterForm.Name = "btnReturnToFilterForm";
+            this.btnReturnToFilterForm.Size = new System.Drawing.Size(125, 45);
+            this.btnReturnToFilterForm.TabIndex = 16;
+            this.btnReturnToFilterForm.Text = "Back...";
+            this.btnReturnToFilterForm.UseVisualStyleBackColor = true;
+            this.btnReturnToFilterForm.Click += new System.EventHandler(this.btnReturnToFilterForm_Click);
             // 
             // EdgeForm
             // 
             this.ClientSize = new System.Drawing.Size(624, 675);
+            this.Controls.Add(this.btnReturnToFilterForm);
             this.Controls.Add(this.cmbEdgeDetection);
             this.Controls.Add(this.btnSaveNewImage);
             this.Name = "EdgeForm";
@@ -81,6 +93,7 @@
             this.Controls.SetChildIndex(this.picPreview, 0);
             this.Controls.SetChildIndex(this.btnSaveNewImage, 0);
             this.Controls.SetChildIndex(this.cmbEdgeDetection, 0);
+            this.Controls.SetChildIndex(this.btnReturnToFilterForm, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
 
@@ -90,5 +103,6 @@
 
         private System.Windows.Forms.Button btnSaveNewImage;
         private System.Windows.Forms.ComboBox cmbEdgeDetection;
+        private System.Windows.Forms.Button btnReturnToFilterForm;
     }
 }
