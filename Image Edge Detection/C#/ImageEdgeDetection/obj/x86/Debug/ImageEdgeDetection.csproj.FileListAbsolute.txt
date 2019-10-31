@@ -21,4 +21,4 @@ C:\Users\Bornatch\Documents\GitHub\ImageEdgeDetectionWithFilters\Image Edge Dete
 C:\Users\Bornatch\Documents\GitHub\ImageEdgeDetectionWithFilters\Image Edge Detection\C#\ImageEdgeDetection\obj\x86\Debug\ImageEdgeDetection.csproj.GenerateResource.cache
 C:\Users\Bornatch\Documents\GitHub\ImageEdgeDetectionWithFilters\Image Edge Detection\C#\ImageEdgeDetection\obj\x86\Debug\ImageEdgeDetection.exe
 C:\Users\Bornatch\Documents\GitHub\ImageEdgeDetectionWithFilters\Image Edge Detection\C#\ImageEdgeDetection\obj\x86\Debug\ImageEdgeDetection.pdb
-C:\Users\Bornatch\Documents\GitHub\ImageEdgeDetectionWithFilters\Image Edge Detection\C#\ImageEdgeDetection\obj\x86\Debug\ImageEdgeDetection.csprojAssemblyReference.cache
+
