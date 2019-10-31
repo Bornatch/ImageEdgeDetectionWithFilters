@@ -13,7 +13,6 @@ namespace ImageEdgeDetection
     {
         private Bitmap originalBitmap = null;
         private Bitmap previewBitmap = null;
-        private Bitmap resultBitmap = null;
 
         private Boolean zenChecked = false;
         private Boolean rainbowChecked = false;
