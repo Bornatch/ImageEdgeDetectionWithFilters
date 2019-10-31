@@ -72,11 +72,11 @@
             this.Controls.Add(this.btnSaveNewImage);
             this.Name = "EdgeForm";
             this.Text = "Edge Detection";
-            this.Load += new System.EventHandler(this.EdgeForm_Load);
-            this.Controls.SetChildIndex(this.picPreview, 0);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EdgeForm_FormClosed);
             this.Controls.SetChildIndex(this.btnSaveNewImage, 0);
             this.Controls.SetChildIndex(this.cmbEdgeDetection, 0);
             this.Controls.SetChildIndex(this.btnReturnToFilterForm, 0);
+            this.Controls.SetChildIndex(this.picPreview, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
 
