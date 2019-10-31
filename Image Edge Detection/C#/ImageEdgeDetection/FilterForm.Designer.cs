@@ -35,6 +35,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
             // 
+            // picPreview
+            // 
+            this.picPreview.Image = global::ImageEdgeDetection.Properties.Resources.loadImg;
+            // 
             // btnOpenEdgeForm
             // 
             this.btnOpenEdgeForm.Enabled = false;
