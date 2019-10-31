@@ -74,6 +74,7 @@
             this.Controls.Add(this.cmbEdgeDetection);
             this.Controls.Add(this.btnSaveNewImage);
             this.Name = "EdgeForm";
+            this.Text = "Edge Detection";
             this.Load += new System.EventHandler(this.EdgeForm_Load);
             this.Controls.SetChildIndex(this.picPreview, 0);
             this.Controls.SetChildIndex(this.btnSaveNewImage, 0);
