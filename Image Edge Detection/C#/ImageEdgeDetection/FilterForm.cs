@@ -21,12 +21,14 @@ namespace ImageEdgeDetection
         private Bitmap originalBitmap = null;
         private Bitmap previewBitmap = null;
         private Bitmap resultBitmap = null;
+
+        private Boolean zenChecked = false;
+        private Boolean rainbowChecked = false;
         
         public FilterForm()
         {
             InitializeComponent();
 
-            cmbEdgeDetection.SelectedIndex = 0;
         }
 
         private void btnOpenOriginal_Click(object sender, EventArgs e)
@@ -45,10 +47,11 @@ namespace ImageEdgeDetection
                 previewBitmap = originalBitmap.CopyToSquareCanvas(picPreview.Width);
                 picPreview.Image = previewBitmap;
 
-                ApplyFilter(true);
+                ApplyFilter();
             }
         }
 
+        
         private void btnSaveNewImage_Click(object sender, EventArgs e)
         {
             ApplyFilter(false);
@@ -83,118 +86,44 @@ namespace ImageEdgeDetection
                 }
             }
         }
+        
 
-        private void ApplyFilter(bool preview)
-        {
-            if (previewBitmap == null || cmbEdgeDetection.SelectedIndex == -1)
-            {
-                return;
-            }
+        private void ApplyFilter()
+        {            
+            
+            previewBitmap = originalBitmap;
+            
+           
+            if(zenChecked)
+                    previewBitmap = ImageFilters.ZenFilter(previewBitmap, 1, 10, 1, 1);
 
-            Bitmap selectedSource = null;
-            Bitmap bitmapResult = null;
+            if (rainbowChecked)
+                previewBitmap = ImageFilters.RainbowFilter(previewBitmap);
 
-            if (preview == true)
-            {
-                selectedSource = previewBitmap;
-            }
-            else
-            {
-                selectedSource = originalBitmap;
-            }
-
-            if (selectedSource != null)
-            {
-                if (cmbEdgeDetection.SelectedItem.ToString() == "None")
-                {
-                    bitmapResult = selectedSource;
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3")
-                {
-                    bitmapResult = selectedSource.Laplacian3x3Filter(false);
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3 Grayscale")
-                {
-                    bitmapResult = selectedSource.Laplacian3x3Filter(true);
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5")
-                {
-                    bitmapResult = selectedSource.Laplacian5x5Filter(false);
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5 Grayscale")
-                {
-                    bitmapResult = selectedSource.Laplacian5x5Filter(true);
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian of Gaussian")
-                {
-                    bitmapResult = selectedSource.LaplacianOfGaussianFilter();
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3 of Gaussian 3x3")
-                {
-                    bitmapResult = selectedSource.Laplacian3x3OfGaussian3x3Filter();
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3 of Gaussian 5x5 - 1")
-                {
-                    bitmapResult = selectedSource.Laplacian3x3OfGaussian5x5Filter1();
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3 of Gaussian 5x5 - 2")
-                {
-                    bitmapResult = selectedSource.Laplacian3x3OfGaussian5x5Filter2();
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5 of Gaussian 3x3")
-                {
-                    bitmapResult = selectedSource.Laplacian5x5OfGaussian3x3Filter();
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5 of Gaussian 5x5 - 1")
-                {
-                    bitmapResult = selectedSource.Laplacian5x5OfGaussian5x5Filter1();
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5 of Gaussian 5x5 - 2")
-                {
-                    bitmapResult = selectedSource.Laplacian5x5OfGaussian5x5Filter2();
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Sobel 3x3")
-                {
-                    bitmapResult = selectedSource.Sobel3x3Filter(false);
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Sobel 3x3 Grayscale")
-                {
-                    bitmapResult = selectedSource.Sobel3x3Filter();
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Prewitt")
-                {
-                    bitmapResult = selectedSource.PrewittFilter(false);
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Prewitt Grayscale")
-                {
-                    bitmapResult = selectedSource.PrewittFilter();
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Kirsch")
-                {
-                    bitmapResult = selectedSource.KirschFilter(false);
-                }
-                else if (cmbEdgeDetection.SelectedItem.ToString() == "Kirsch Grayscale")
-                {
-                    bitmapResult = selectedSource.KirschFilter();
-                }
-            }
-
-            if (bitmapResult != null)
-            {
-                if (preview == true)
-                {
-                    picPreview.Image = bitmapResult;
-                }
-                else
-                {
-                    resultBitmap = bitmapResult;
-                }
-            }
+            picPreview.Image = previewBitmap;
+              
         }
 
         private void NeighbourCountValueChangedEventHandler(object sender, EventArgs e)
         {
-            ApplyFilter(true);
+            ApplyFilter();
+        }
+
+        private void FilterForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckbFilterZen_CheckedChanged(object sender, EventArgs e)
+        {
+            zenChecked = ckbFilterZen.Checked;
+            ApplyFilter();
+        }
+               
+        private void ckbFilterRainbow_CheckedChanged(object sender, EventArgs e)
+        {
+            rainbowChecked = ckbFilterRainbow.Checked;
+            ApplyFilter();
         }
     }
 }

@@ -438,5 +438,6 @@ namespace ImageEdgeDetection
 
             return resultBitmap;
         }
+                
     }  
 }

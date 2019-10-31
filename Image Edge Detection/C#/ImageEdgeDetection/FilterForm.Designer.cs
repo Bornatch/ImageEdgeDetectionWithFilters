@@ -1,4 +1,6 @@
-﻿namespace ImageEdgeDetection
+﻿using System.Windows.Forms;
+
+namespace ImageEdgeDetection
 {
     partial class FilterForm
     {
@@ -32,6 +34,8 @@
             this.btnOpenOriginal = new System.Windows.Forms.Button();
             this.btnSaveNewImage = new System.Windows.Forms.Button();
             this.cmbEdgeDetection = new System.Windows.Forms.ComboBox();
+            this.ckbFilterZen = new System.Windows.Forms.CheckBox();
+            this.ckbFilterRainbow = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,63 +72,69 @@
             this.btnSaveNewImage.TabIndex = 16;
             this.btnSaveNewImage.Text = "Save Image";
             this.btnSaveNewImage.UseVisualStyleBackColor = true;
-            this.btnSaveNewImage.Click += new System.EventHandler(this.btnSaveNewImage_Click);
             // 
             // cmbEdgeDetection
             // 
-            this.cmbEdgeDetection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEdgeDetection.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEdgeDetection.FormattingEnabled = true;
-            this.cmbEdgeDetection.Items.AddRange(new object[] {
-            "None",
-            "Laplacian 3x3",
-            "Laplacian 3x3 Grayscale",
-            "Laplacian 5x5",
-            "Laplacian 5x5 Grayscale",
-            "Laplacian of Gaussian",
-            "Laplacian 3x3 of Gaussian 3x3",
-            "Laplacian 3x3 of Gaussian 5x5 - 1",
-            "Laplacian 3x3 of Gaussian 5x5 - 2",
-            "Laplacian 5x5 of Gaussian 3x3",
-            "Laplacian 5x5 of Gaussian 5x5 - 1",
-            "Laplacian 5x5 of Gaussian 5x5 - 2",
-            "Sobel 3x3",
-            "Sobel 3x3 Grayscale",
-            "Prewitt",
-            "Prewitt Grayscale",
-            "Kirsch",
-            "Kirsch Grayscale"});
-            this.cmbEdgeDetection.Location = new System.Drawing.Point(168, 627);
+            this.cmbEdgeDetection.Location = new System.Drawing.Point(0, 0);
             this.cmbEdgeDetection.Name = "cmbEdgeDetection";
-            this.cmbEdgeDetection.Size = new System.Drawing.Size(288, 32);
-            this.cmbEdgeDetection.TabIndex = 20;
-            this.cmbEdgeDetection.SelectedIndexChanged += new System.EventHandler(this.NeighbourCountValueChangedEventHandler);
+            this.cmbEdgeDetection.Size = new System.Drawing.Size(121, 21);
+            this.cmbEdgeDetection.TabIndex = 0;
             // 
-            // MainForm
+            // ckbFilterZen
+            // 
+            this.ckbFilterZen.AutoSize = true;
+            this.ckbFilterZen.Location = new System.Drawing.Point(168, 620);
+            this.ckbFilterZen.Name = "ckbFilterZen";
+            this.ckbFilterZen.Size = new System.Drawing.Size(67, 17);
+            this.ckbFilterZen.TabIndex = 17;
+            this.ckbFilterZen.Text = "FilterZen";
+            this.ckbFilterZen.UseVisualStyleBackColor = true;
+            this.ckbFilterZen.CheckedChanged += new System.EventHandler(this.ckbFilterZen_CheckedChanged);
+            // 
+            // ckbFilterRainbow
+            // 
+            this.ckbFilterRainbow.AutoSize = true;
+            this.ckbFilterRainbow.Location = new System.Drawing.Point(310, 620);
+            this.ckbFilterRainbow.Name = "ckbFilterRainbow";
+            this.ckbFilterRainbow.Size = new System.Drawing.Size(93, 17);
+            this.ckbFilterRainbow.TabIndex = 17;
+            this.ckbFilterRainbow.Text = "Filter Rainbow";
+            this.ckbFilterRainbow.UseVisualStyleBackColor = true;
+            this.ckbFilterRainbow.CheckedChanged += new System.EventHandler(this.ckbFilterRainbow_CheckedChanged);
+            // 
+            // FilterForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(624, 675);
-            this.Controls.Add(this.cmbEdgeDetection);
+            this.Controls.Add(this.ckbFilterZen);
+            this.Controls.Add(this.ckbFilterRainbow);
             this.Controls.Add(this.btnSaveNewImage);
             this.Controls.Add(this.btnOpenOriginal);
             this.Controls.Add(this.picPreview);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "MainForm";
+            this.Name = "FilterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Image Edge Detection";
+            this.Text = "Apply at least one filter";
+            this.Load += new System.EventHandler(this.FilterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picPreview;
-        private System.Windows.Forms.Button btnOpenOriginal;
-        private System.Windows.Forms.Button btnSaveNewImage;
-        private System.Windows.Forms.ComboBox cmbEdgeDetection;
+        private PictureBox picPreview;
+        private Button btnOpenOriginal;
+        private Button btnSaveNewImage;
+        private ComboBox cmbEdgeDetection;
+        //create filter checkbox and textbox
+        private CheckBox ckbFilterZen;        
+        private CheckBox ckbFilterRainbow;
+        
+       
     }
 }
 
