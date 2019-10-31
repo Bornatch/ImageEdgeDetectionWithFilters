@@ -27,5 +27,10 @@ namespace ImageEdgeDetection
         {
             InitializeComponent();
         }
+
+        private void btnKillApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

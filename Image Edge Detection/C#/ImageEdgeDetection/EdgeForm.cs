@@ -151,10 +151,5 @@ namespace ImageEdgeDetection
             this.Close();
             Application.OpenForms[0].Show();
         }
-
-        private void EdgeForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }
