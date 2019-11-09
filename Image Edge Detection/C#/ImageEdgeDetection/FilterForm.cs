@@ -101,5 +101,10 @@ namespace ImageEdgeDetection
             var edgeForm = new EdgeForm(previewBitmap);
             edgeForm.Show();       
         }
+
+        private void picPreview_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

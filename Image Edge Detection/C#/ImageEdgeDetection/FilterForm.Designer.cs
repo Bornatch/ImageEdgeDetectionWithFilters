@@ -14,6 +14,7 @@
             // picPreview
             // 
             this.picPreview.Image = global::ImageEdgeDetection.Properties.Resources.loadImg;
+            this.picPreview.Click += new System.EventHandler(this.picPreview_Click);
             // 
             // btnOpenEdgeForm
             // 
@@ -45,7 +46,7 @@
             this.ckbZenFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbZenFilter.Location = new System.Drawing.Point(141, 631);
             this.ckbZenFilter.Name = "ckbZenFilter";
-            this.ckbZenFilter.Size = new System.Drawing.Size(90, 24);
+            this.ckbZenFilter.Size = new System.Drawing.Size(173, 41);
             this.ckbZenFilter.TabIndex = 16;
             this.ckbZenFilter.Text = "Zen filter";
             this.ckbZenFilter.UseVisualStyleBackColor = true;
@@ -58,7 +59,7 @@
             this.ckbRainbowFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbRainbowFilter.Location = new System.Drawing.Point(317, 631);
             this.ckbRainbowFilter.Name = "ckbRainbowFilter";
-            this.ckbRainbowFilter.Size = new System.Drawing.Size(124, 24);
+            this.ckbRainbowFilter.Size = new System.Drawing.Size(242, 41);
             this.ckbRainbowFilter.TabIndex = 17;
             this.ckbRainbowFilter.Text = "Rainbow filter";
             this.ckbRainbowFilter.UseVisualStyleBackColor = true;
