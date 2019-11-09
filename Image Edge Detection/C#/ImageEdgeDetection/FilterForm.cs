@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
@@ -24,6 +20,8 @@ namespace ImageEdgeDetection
 
         public FilterForm(Bitmap importedImage)
         {
+            //used when "back" is pressed on EdgeForm 
+
             picPreview.Image = importedImage;
             previewBitmap = importedImage;
             enableCheckboxes();
@@ -33,6 +31,7 @@ namespace ImageEdgeDetection
 
         private void btnLoadImg_Click(object sender, EventArgs e)
         {
+            //open dialog in order to load image
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select an image file.";
@@ -59,6 +58,7 @@ namespace ImageEdgeDetection
 
         private void ApplyFilter()
         {
+            //apply filter to image
             previewBitmap = originalBitmap;
 
             if (zenChecked)
@@ -66,6 +66,8 @@ namespace ImageEdgeDetection
 
             if (rainbowChecked)
                 previewBitmap = ImageFilters.RainbowFilter(previewBitmap);
+
+            //activate "next" button only if one or two checkboxes are activated
 
             if (zenChecked || rainbowChecked)
                 btnOpenEdgeForm.Enabled = true;

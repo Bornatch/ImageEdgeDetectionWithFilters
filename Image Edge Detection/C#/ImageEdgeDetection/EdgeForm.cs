@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
@@ -113,7 +109,6 @@ namespace ImageEdgeDetection
         private void btnSaveNewImage_Click(object sender, EventArgs e)
         {
             //open dialog in order to save the modified image
-
             if (previewBitmap != null)
             {
                 SaveFileDialog sfd = new SaveFileDialog();
@@ -150,22 +145,10 @@ namespace ImageEdgeDetection
             ApplyFilter(true);
         }
 
-        private void EdgeForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-            int test = 0;
-
-        }
-
         private void btnReturnToFilterForm_Click(object sender, EventArgs e)
         { 
             this.Close();
             Application.OpenForms[0].Show();
-        }
-
-        private void EdgeForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

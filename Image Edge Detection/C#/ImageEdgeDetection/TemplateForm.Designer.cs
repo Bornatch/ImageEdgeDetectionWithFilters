@@ -14,6 +14,7 @@ namespace ImageEdgeDetection
         private void InitializeComponent()
         {
             this.picPreview = new System.Windows.Forms.PictureBox();
+            this.btnKillApp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -24,17 +25,31 @@ namespace ImageEdgeDetection
             this.picPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picPreview.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.picPreview.Location = new System.Drawing.Point(12, 12);
+            this.picPreview.Location = new System.Drawing.Point(12, 61);
             this.picPreview.Name = "picPreview";
-            this.picPreview.Size = new System.Drawing.Size(600, 600);
+            this.picPreview.Size = new System.Drawing.Size(600, 551);
             this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPreview.TabIndex = 13;
             this.picPreview.TabStop = false;
+            // 
+            // btnKillApp
+            // 
+            this.btnKillApp.BackColor = System.Drawing.SystemColors.Menu;
+            this.btnKillApp.Location = new System.Drawing.Point(576, 12);
+            this.btnKillApp.Name = "btnKillApp";
+            this.btnKillApp.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnKillApp.Size = new System.Drawing.Size(36, 42);
+            this.btnKillApp.TabIndex = 14;
+            this.btnKillApp.Text = "X";
+            this.btnKillApp.UseVisualStyleBackColor = false;
+            this.btnKillApp.Click += new System.EventHandler(this.btnKillApp_Click);
             // 
             // TemplateForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(624, 675);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnKillApp);
             this.Controls.Add(this.picPreview);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -50,6 +65,7 @@ namespace ImageEdgeDetection
         #endregion
 
         protected PictureBox picPreview;
+        private Button btnKillApp;
     }
 }
 
