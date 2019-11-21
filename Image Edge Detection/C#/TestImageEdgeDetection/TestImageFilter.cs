@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ImageEdgeDetection;
+using System.Drawing;
 
 namespace TestImageEdgeDetection
 {
@@ -7,8 +9,11 @@ namespace TestImageEdgeDetection
     public class TestImageFilter
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestZenInputParam()
         {
+            Bitmap bitmap = new Bitmap("");
+
+            ImageFilters.ZenFilter(bitmap, -1, 1, 1, 1);
         }
     }
 }

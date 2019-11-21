@@ -12,9 +12,12 @@ namespace ImageEdgeDetection
         //Zen Filter apply color filter at your own taste
         public static Bitmap ZenFilter(Bitmap bmp, int alpha, int red, int blue, int green)
         {
+            if(alpha || red || green || blue < 0)
+            {
+
+            }
 
             Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
-
 
             for (int i = 0; i < bmp.Width; i++)
             {
