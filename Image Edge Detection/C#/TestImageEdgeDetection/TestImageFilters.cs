@@ -10,25 +10,72 @@ namespace TestImageEdgeDetection
     [TestClass]
     public class TestImageFilters
     {
-       
-        [TestMethod]
-        public void TestRainbowFilter()
-        {
-            Bitmap bmp = new Bitmap("C:/Users/Nicolas Solioz/Pictures/Cheese Disco 22.07.2017/tree.jpg");
-            Bitmap imageResult = ImageFilters.RainbowFilter(bmp);
-            int resultSize = imageResult.Width * imageResult.Height;
 
-            Assert.AreEqual(resultSize, 307200);
+        //zenfilter tests
+        [TestMethod]
+        public void TestZenFilterAlpha()
+        {
+            Bitmap init = new Bitmap("C:/Users/Bornatch/Documents/GitHub/ImageEdgeDetectionWithFilters/Image Edge Detection/C#/ImageEdgeDetection/Resources/loadImg.png");
+
+            Bitmap value = ImageFilters.ZenFilter(init, -1, 10, 1, 1);
+
+            int control = 7878550;// ImageFilters.ZenFilter(init, 1, 10, 1, 1).GetHashCode();
+
+            Assert.AreEqual(value.GetHashCode(), control);
+
         }
 
         [TestMethod]
-        public void TestZenFilter()
+        public void TestZenFilterRed()
         {
-            Bitmap bmp = new Bitmap("C:/Users/Nicolas Solioz/Pictures/Cheese Disco 22.07.2017/tree.jpg");
-            Bitmap imageResult = ImageFilters.ZenFilter(bmp, 10, 10, 10, 10);
-            int resultSize = imageResult.Width * imageResult.Height;
+            Bitmap init = new Bitmap("C:/Users/Bornatch/Documents/GitHub/ImageEdgeDetectionWithFilters/Image Edge Detection/C#/ImageEdgeDetection/Resources/loadImg.png");
 
-            Assert.AreEqual(resultSize, 307200);
+            Bitmap value = ImageFilters.ZenFilter(init, 1, -1, 1, 1);
+
+            int control = 7878550;
+
+            Assert.AreEqual(value.GetHashCode(), control);
+
+        }
+
+        [TestMethod]
+        public void TestZenFilterBlue()
+        {
+            Bitmap init = new Bitmap("C:/Users/Bornatch/Documents/GitHub/ImageEdgeDetectionWithFilters/Image Edge Detection/C#/ImageEdgeDetection/Resources/loadImg.png");
+
+            Bitmap value = ImageFilters.ZenFilter(init, 1, 10, 0, 1);
+
+            int control = 7878550;// ImageFilters.ZenFilter(init, 1, 10, 1, 1).GetHashCode();
+
+            Assert.AreEqual(value.GetHashCode(), control);
+
+        }
+
+        [TestMethod]
+        public void TestZenFilterGreen()
+        {
+            Bitmap init = new Bitmap("C:/Users/Bornatch/Documents/GitHub/ImageEdgeDetectionWithFilters/Image Edge Detection/C#/ImageEdgeDetection/Resources/loadImg.png");
+
+            Bitmap value = ImageFilters.ZenFilter(init, 1, 1, 10, -1);
+
+            int control = 7878550;// ImageFilters.ZenFilter(init, 1, 1, 10, 1).GetHashCode();
+
+            Assert.AreEqual(value.GetHashCode(), control);
+
+        }
+
+        //Rainbow Filter test
+        [TestMethod]
+        public void TestRainbowFilter()
+        {
+            Bitmap init = new Bitmap("C:/Users/Bornatch/Documents/GitHub/ImageEdgeDetectionWithFilters/Image Edge Detection/C#/ImageEdgeDetection/Resources/loadImg.png");
+
+            Bitmap value = ImageFilters.RainbowFilter(init);
+
+            int control = 7878550;
+
+            Assert.AreEqual(value.GetHashCode(), control);
+
         }
     }
 }
