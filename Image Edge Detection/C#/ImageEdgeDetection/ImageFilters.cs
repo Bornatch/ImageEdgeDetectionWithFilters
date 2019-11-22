@@ -15,6 +15,30 @@ namespace ImageEdgeDetection
 
             Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
 
+            //check if one ore more negative or 0
+            if(alpha <= 0 || red <= 0 || blue <= 0 || green <= 0)
+            {
+                if (alpha <= 0)
+                    alpha = 1;
+                if (red <= 0)
+                    red = 1;
+                if (blue <= 0)
+                    blue = 1;
+                if (green <= 0)
+                    green = 1;
+
+                for (int i = 0; i < bmp.Width; i++)
+                {
+                    for (int x = 0; x < bmp.Height; x++)
+                    {
+                        Color c = bmp.GetPixel(i, x);
+                        Color cLayer = Color.FromArgb(c.A / alpha, c.R / red, c.G / green, c.B / blue);
+                        temp.SetPixel(i, x, cLayer);
+                    }
+
+                }
+                return temp;
+            }
 
             for (int i = 0; i < bmp.Width; i++)
             {
