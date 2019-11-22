@@ -21,7 +21,7 @@ namespace ImageEdgeDetection
             cmbEdgeDetection.SelectedIndex = 0;
         }
 
-        private void ApplyFilter(bool preview)
+        public void ApplyFilter(bool preview)
         {
             //retrieve selected value in drop down list
             String chosenEdgeFilter = cmbEdgeDetection.SelectedItem.ToString();
@@ -106,7 +106,7 @@ namespace ImageEdgeDetection
             appliedFilter = chosenEdgeFilter;
         }
 
-        private void btnSaveNewImage_Click(object sender, EventArgs e)
+        public void btnSaveNewImage_Click(object sender, EventArgs e)
         {
             //open dialog in order to save the modified image
             if (previewBitmap != null)
@@ -140,12 +140,12 @@ namespace ImageEdgeDetection
             }
         }
 
-        private void cmbEdgeDetection_SelectedIndexChanged(object sender, EventArgs e)
+        public void cmbEdgeDetection_SelectedIndexChanged(object sender, EventArgs e)
         {
             ApplyFilter(true);
         }
 
-        private void btnReturnToFilterForm_Click(object sender, EventArgs e)
+        public void btnReturnToFilterForm_Click(object sender, EventArgs e)
         { 
             this.Close();
             Application.OpenForms[0].Show();

@@ -29,7 +29,7 @@ namespace ImageEdgeDetection
             InitializeComponent();
         }
 
-        private void btnLoadImg_Click(object sender, EventArgs e)
+        public void btnLoadImg_Click(object sender, EventArgs e)
         {
             //open dialog in order to load image
 
@@ -56,7 +56,7 @@ namespace ImageEdgeDetection
                 enableCheckboxes();
         }
 
-        private void ApplyFilter()
+        public void ApplyFilter()
         {
             //apply filter to image
             previewBitmap = originalBitmap;
@@ -77,32 +77,32 @@ namespace ImageEdgeDetection
             picPreview.Image = previewBitmap;
         }
 
-        private void ckbZenFilter_CheckedChanged(object sender, EventArgs e)
+        public void ckbZenFilter_CheckedChanged(object sender, EventArgs e)
         {
             zenChecked = ckbZenFilter.Checked;
             ApplyFilter();
         }
 
-        private void ckbRainbowFilter_CheckedChanged(object sender, EventArgs e)
+        public void ckbRainbowFilter_CheckedChanged(object sender, EventArgs e)
         {
             rainbowChecked = ckbRainbowFilter.Checked;
             ApplyFilter();
         }
 
-        private void enableCheckboxes()
+        public void enableCheckboxes()
         {
             ckbRainbowFilter.Enabled = true;
             ckbZenFilter.Enabled = true;
         }
 
-        private void btnOpenEdgeForm_Click(object sender, EventArgs e)
+        public void btnOpenEdgeForm_Click(object sender, EventArgs e)
         {
             this.Hide();
             var edgeForm = new EdgeForm(previewBitmap);
             edgeForm.Show();       
         }
 
-        private void picPreview_Click(object sender, EventArgs e)
+        public void picPreview_Click(object sender, EventArgs e)
         {
 
         }
